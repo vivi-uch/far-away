@@ -1,0 +1,39 @@
+//********************************SELECT..OPTION*****************************//
+You want to create a seelct tag with 20 options
+unlike writing the option tag 20times
+{Array.from({length: 20}, (_,i)=> i+1).map((num)=> (
+  <option value={num} key={num}>
+    {num}
+  </option>
+  )
+)}
+
+//********************************Controlled Elements*****************************//
+So since as a front-end dev we can't regain contents, so for form submission we have to reject reloading
+onSubmit={(e)=>e.preventDefault()}
+
+//********************************Controlled Elements*****************************//
+Controlled Elements: follow three steps:
+1. create a piece of state
+2. use the state when needed, for the input now the state becomes the input value
+3. state the function for the state section
+
+onSubmit-- Submits Forms using Inputs or Buttons
+onChange
+
+all these are useful in controlling elements such as input, select, which stores their value in their respective DOM
+note the below:
+<select value={quantiity} onChange={(e) => setQuantity(e.target.value)}>
+e.tagert.value always return a string.
+there should have been a useState created const [quantity, setQuantity]
+so quantity is being updated based on what the user inputs or select.
+
+Props can only be passed from parents components and not siblings
+
+States vs Props
+State Management: deciding when to create a piece of state, what type of states are necessary, where they are to be placed, how the data flows
+We basically need to find the home of these states.
+States: Local states vs Global states/Shared states and they are used in react as :Redix or COntext API.
+
+Lifting States up: Litfting up states to a common parent component.
+
